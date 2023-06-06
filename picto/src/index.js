@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Pictototext from './pictotext/Pictototext.jsx';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -14,6 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     {
       path: "/",
       element: <App/>
+    },
+
+    {
+      path: "/pictototext",
+      element: <Pictototext/>
     }
   ])
 
