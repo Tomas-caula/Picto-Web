@@ -1,3 +1,23 @@
+  button h3 {
+    padding: 0px;
+    margin: 10px;
+  }
+
+  button {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .Row1 .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .image {
+    padding: 0px;
+    margin: 0px;
+  }
+
 .PictoToText {
     display: flex;
     flex-direction: column;
@@ -17,7 +37,9 @@
   }
 
     .Row1{
+      display: flex;
       justify-content: center;
+      align-items: center;
       background-color: white;
       border-top: 1px solid #D9D7D7;
       border-left: 1px solid #D9D7D7;
@@ -25,12 +47,14 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
-    .Row1 {
+
+    .Row1 button {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      
     }
-    
+
       .image {
         width: 2vw;
       }
@@ -64,4 +88,17 @@
       border-right: 1px solid #D9D7D7;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
+    }
+
+    ul {
+      padding: 20px;
+      background-color: white;
+      margin-top: 40px;
+      list-style: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 30px #00000026
+    }
+
+    li img {
+      width: 15px;
     }
