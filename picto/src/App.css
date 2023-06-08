@@ -1,6 +1,6 @@
 .Home{
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 12.5% 75% 12.5%;
 }
 
 .Home .middle {
