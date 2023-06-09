@@ -5,7 +5,8 @@ import categories from '../categories';
 import './PictoToText.css';
 
 function PictoToText() {
-  
+const ChevronDown = ({size=24, color="#000000"}) => (<svg  xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>);
+const RefreshCcw = ({size=36, color="#000000"}) => (<svg className = "child" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2"/></svg>);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedPictos, setSelectedPictos] = useState([]);
 
@@ -64,17 +65,21 @@ function PictoToText() {
     <div className="PictoToText">
       <div className='Translator'>
         <div className='Row1'>
-          <div className="content">
-            <button onClick={() => handleShow()}  ref={element1Ref} className='pictogramas' style={{backgroundColor:"white", border:0}}>
+          <div className="column">
+            <button onClick={() => handleShow()}  ref={element1Ref} className='pictogramas child'>
               <h3>Pictogramas</h3>
+              <ChevronDown/>
             </button>
-           
-            <button style={{backgroundColor:"white", border:0, flexDirection:"row"}}>
-              <img src="./icons/español.png" className="image"/>
+          </div>
+          <div className="column">
+            <RefreshCcw></RefreshCcw>
+          </div>
+          <div className="column">
+            <button className = "child">
               <h3 style={{textAlign:"center"}}>Español</h3>
             </button>
+          </div>
        
-            </div>
         </div>
         <div className='GridContainer'>
           <div className="PictoToText__pictoGrid">
@@ -86,13 +91,15 @@ function PictoToText() {
         </div>
         <div className='Row3'>
           {/* Additional content */}
+          <button>Button Uno</button>
+          <button>Button Dos</button>
         </div>
       </div>
 
       {showOptions ? ( 
           <ul ref={divRef} style={{position: "absolute", left: positionMenu[1], top: positionMenu[0]}}>
-            <li onClick={() => selectOne("espanol")} > <img src='icons/español.png'></img> Español <svg id='espanol' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> </li>
-            <li onClick={() => selectOne("ingles")}> <img src='icons/ingles.png'/> Ingles <svg id='ingles' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> </li>
+            <li onClick={() => selectOne("espanol")} >Español <svg id='espanol' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> </li>
+            <li onClick={() => selectOne("ingles")}> Ingles <svg id='ingles' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> </li>
             <li onClick={() => selectOne("pictogramas")}> Pictogramas <svg id='pictogramas' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> </li>
           </ul>
       ):null
